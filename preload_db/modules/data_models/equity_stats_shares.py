@@ -26,7 +26,7 @@ class CompanyStatsResponse(BaseModel):
             return dt_object.strftime("%Y-%m-%d")
         try:
             date_format_check = datetime.strptime(v, "%Y-%m-%d")
-            return date_format_check.strftime(date_format_check, "%Y-%m-%d")
+            return date_format_check.strftime("%Y-%m-%d")
         except ValueError:
             print("Could not convert to datetime object")
             raise
@@ -38,7 +38,7 @@ class CompanyStatsResponse(BaseModel):
             return dt_object.strftime("%Y-%m-%d")
         try:
             date_format_check = datetime.strptime(v, "%Y-%m-%d")
-            return date_format_check.strftime(date_format_check, "%Y-%m-%d")
+            return date_format_check.strftime("%Y-%m-%d")
         except ValueError:
             print("Could not convert to datetime object")
             raise

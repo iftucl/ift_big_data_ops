@@ -11,17 +11,18 @@ to run this script, you will need to have a valid RapidApi key. To obtain, log-i
 Once you obtain your personal key, you have two choices to pass the script to this app.
 
 1. Export the key with naming.
-2. setup a .env.dev file in the root directory of this folder.
+2. setup a .env.dev file in the root directory of this folder (if so, pass the `secrets_env` command line argument as `True`).
 
 Once this has been done, you can run the script by using the following commands:
 
 ```bash
 cd preload_db
 poetry install
-poetry run main.py --env="dev" --
+poetry run main.py --env="dev" --secrets_env="False"
 
 ```
 
 ## CURRENT RELEASE
 
 In current release, there is one option only which retrieves company statics from rapid api.
+
