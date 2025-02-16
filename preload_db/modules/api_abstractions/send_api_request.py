@@ -15,14 +15,14 @@ def base_api_calls(rapidapi_conf: GenericRapidApiRequest, querystring: Optional[
 	    "x-rapidapi-host": rapidapi_conf.host
     }
     try:
-        response = requests.get(rapidapi_conf.url, headers=headers, params=querystring)
+        response = requests.get(rapidapi_conf.url.unicode_string(), headers=headers, params=querystring)
     except requests.exceptions.RequestException as e:  # This is the correct syntax
         raise SystemExit(e)
     if response.status_code == 429:
         # 429 error code refers to when rapid api free call are exhausted
         raise requests.exceptions.RequestsWarning("Request was processed. Free tier calls are exhausted.")
     if response.status_code != 200:
-        print(f"Generic error while requesting {headers} with {querystring}")
+        print(f"Generic error while requesting {headers} with {querystring} & error code: {response.status_code}")
         raise    
     return response.json()
 
@@ -53,4 +53,4 @@ def get_key_statistics(symbol: str, rapidapi_conf: GenericRapidApiRequest) -> Co
         end_date = "2199-12-31",
         entry_id=symbol+"20250215"
         )
-    return key_stats
+    return validate_response
