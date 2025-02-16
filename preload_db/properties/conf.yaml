@@ -1,0 +1,8 @@
+local:
+  database:
+    sqlite:
+      path: sqlite:///./staging_db/Equity.db
+  rapid_api:
+    yh:
+      host_name: "yahoo-finance166.p.rapidapi.com"
+      stats_endpoint: "https://yahoo-finance166.p.rapidapi.com/api/stock/get-statistics"

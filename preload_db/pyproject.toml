@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "data-extractor"
+version = "0.1.0"
+description = "Extracts dat from api to load database"
+authors = ["uceslc0 <uceslc0@ucl.ac.uk>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sqlalchemy = "^2.0.37"
+sqlmodel = "^0.0.22"
+requests = "^2.32.3"
+ift-global = {git = "https://github.com/iftucl/ift_global.git"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
